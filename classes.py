@@ -1,7 +1,7 @@
 class natural:
     def __init__(self, data : list):
         self.data = data.copy()
-        self.n = len(data) + 1
+        self.n = len(data)
 
 class integer():
     def __init__(self, sign :  int, data : natural):
