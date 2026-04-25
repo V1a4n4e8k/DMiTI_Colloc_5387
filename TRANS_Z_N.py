@@ -1,0 +1,13 @@
+import classes
+
+
+def TRANS_Z_N(a: classes.integer):
+    output = classes.natural(a.data.data)
+    return output
+
+
+#Функция преобразования целого числа в натуральное
+
+#Функция возрващает натуральное число
+
+#Аргумент функции не меняется и не связывается
