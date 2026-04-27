@@ -1,3 +1,8 @@
+"""
+Z-6
+Сложение целых чисел
+"""
+
 import classes
 import SGN_Z_D
 #import ABS_Z_Z
@@ -11,7 +16,7 @@ def ADD_ZZ_Z(a: classes.integer, b: classes.integer):
     a_sign = SGN_Z_D.SGN_Z_D(a)
     b_sign = SGN_Z_D.SGN_Z_D(b)
 
-    com_nn_d = COM_NN_D.COM_NN_D(a.data.data, b.data.data)
+    com_nn_d = COM_NN_D.COM_NN_D(a.data, b.data)
 
     if com_nn_d == 2:
         big_val = a
@@ -25,13 +30,13 @@ def ADD_ZZ_Z(a: classes.integer, b: classes.integer):
         sml_val = b
 
     if a_sign == b_sign:
-        new_data = ADD_NN_N.ADD_NN_N(a.data.data, b.data.data)
+        new_data = ADD_NN_N.ADD_NN_N(a.data, b.data)
         new_sign = a.sign
     else:
-        new_data = SUB_NN_N.SUB_NN_N(big_val.data.data, sml_val.data.data)
+        new_data = SUB_NN_N.SUB_NN_N(big_val.data, sml_val.data)
         new_sign = big_val.sign
 
-    output = classes.integer(new_sign, classes.natural(new_data))
+    output = classes.integer(new_sign, new_data)
 
     return output
 

@@ -1,8 +1,12 @@
+"""
+Z-4
+Преобразование натурального в целое
+"""
+
 import classes
 
-
 def TRANS_N_Z(a: classes.natural):
-    output = classes.integer(0, classes.natural(a.data.data))
+    output = classes.integer(0, classes.natural(a.data))
     return output
 
 
