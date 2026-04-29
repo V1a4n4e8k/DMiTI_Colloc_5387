@@ -1,20 +1,31 @@
-from copy import deepcopy
-
-def MUL_ND_N(b, n):
-    a = deepcopy(b)
-    for i in range(len(a)):
-        a[i] = a[i] * n
-    move = 0
-    for i in range(len(a) - 1, -1, -1):
-        a[i] += move
-        move = a[i] // 10
-        a[i] %= 10
-    if move:
-        a.insert(0, move)
-    return a
-""" use ex
-a = [1,2,3]
-n = 9
-MUL_NN_N(a,n)
-print(a)
 """
+N-6
+Умножение натурального числа на цифру
+"""
+
+import classes
+from classes import natural
+
+
+def MUL_ND_N(a: classes.natural, n: int):
+    if n == 0:
+        return classes.natural([0])
+
+    if n == 1:
+        return classes.natural(a.data)
+
+    res = []
+    ost = 0
+    i = a.n - 1
+
+    while i >= 0 or ost > 0:
+        dig = a.data[i] if i >= 0 else 0
+
+        val = dig * n + ost
+        res.append(val % 10)
+        ost = val // 10
+
+        i -= 1
+
+    res.reverse()
+    return classes.natural(res)

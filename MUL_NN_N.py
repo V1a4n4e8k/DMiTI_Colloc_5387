@@ -1,28 +1,34 @@
-from copy import deepcopy
-from COM_NN_D import COM_NN_D
-from ADD_NN_N import ADD_NN_N
-from MUL_ND_N import MUL_ND_N
-from MUL_NK_N import MUL_NK_N
-
-def MUL_NN_N(a, b):
-    long = []
-    short = []
-    if COM_NN_D(a, b) == 2:
-        long = deepcopy(a)
-        short = deepcopy(b)
-    else:
-        long = deepcopy(b)
-        short = deepcopy(a)
-    
-    result = [0]
-    
-    for i in range(len(short)-1, -1, -1):
-        digit = short[i]
-        mul_by_digit = MUL_ND_N(long, digit)
-        mul_by_pow10 = MUL_NK_N(mul_by_digit, len(short)-1-i)
-        result = ADD_NN_N(result, mul_by_pow10)
-    
-    return result
-""" use ex
-print(MUL_NN_N([9,9], [9,9,9]))
 """
+N-8
+Умножение натуральных чисел
+"""
+
+import classes
+import MUL_ND_N
+import MUL_Nk_N
+import ADD_NN_N
+
+def MUL_NN_N(a: classes.natural, b: classes.natural):
+    # если одно из чисел = 0
+    if (a.n == 1 and a.data[0] == 0) or (b.n == 1 and b.data[0] == 0):
+        return classes.natural([0])
+
+    result = classes.natural([0])
+
+    k = 0
+    j = b.n - 1
+
+    while j >= 0:
+        # умножаем a на одну цифру b
+        part = MUL_ND_N.MUL_ND_N(a, b.data[j])
+
+        # домножаем на 10^k тк у нас сдвиги при умножении в столбик
+        part = MUL_Nk_N.MUL_Nk_N(part, k)
+
+        # прибавляем к результату
+        result = ADD_NN_N.ADD_NN_N(result, part)
+
+        k += 1
+        j -= 1
+
+    return result
