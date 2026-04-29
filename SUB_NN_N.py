@@ -4,42 +4,33 @@ N-5
 """
 
 from COM_NN_D import COM_NN_D
+import classes
+from classes import natural
 
-def SUB_NN_N(a, b):
+
+def SUB_NN_N(a : classes.natural, b : classes.natural):
     # по условию a >= b
     if COM_NN_D(a, b) == 1:
         return None
 
-    a = a[:]  # чтобы не портить исходный массив
+    res = a.data.copy()  # чтобы не портить исходный массив
 
-    i = len(a) - 1
-    j = len(b) - 1
+    i = len(res) - 1
+    j = b.n - 1
 
-    while j >= 0:
-        if a[i] >= b[j]:
-            a[i] -= b[j]
+    while i >= 0:
+        tmp_b = b.data[j] if j >= 0 else 0
+        if res[i] >= tmp_b:
+            res[i] -= tmp_b
         else:
-            a[i - 1] -= 1
-            a[i] = a[i] + 10 - b[j]
+            res[i - 1] -= 1
+            res[i] = res[i] + 10 - tmp_b
 
         i -= 1
         j -= 1
 
     # убираем ведущие нули, но оставляем один ноль
-    while len(a) > 1 and a[0] == 0:
-        a.pop(0)
+    while len(res) > 1 and res[0] == 0:
+        res.pop(0)
 
-    return a
-
-""" ПРИМЕР ИСПОЛЬЗОВАНИЯ
-a = [1,2,3,4]
-b = [3,4,5]
-SUB_NN_N(a,b)
-
-print(print(a))
-"""
-a = [1,2,3,4]
-b = [3,4,5]
-c = SUB_NN_N(a,b)
-
-print(c)
+    return classes.natural(res)

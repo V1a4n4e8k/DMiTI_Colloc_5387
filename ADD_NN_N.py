@@ -1,28 +1,30 @@
-from COM_NN_D import COM_NN_D
-from copy import deepcopy
-
-def ADD_NN_N(a, b):
-    num1 = deepcopy(a)
-    num2 = deepcopy(b)
-    
-    while len(num1) < len(num2):
-        num1.insert(0, 0)
-    while len(num2) < len(num1):
-        num2.insert(0, 0)
-    
-    num1.insert(0, 0)
-    
-    for i in range(len(num1)-1, 0, -1):
-        num1[i] += num2[i-1]
-        
-        if num1[i] >= 10:
-            num1[i] -= 10
-            num1[i-1] += 1
-    
-    while len(num1) > 1 and num1[0] == 0:
-        num1.pop(0)
-    
-    return num1
-""" use ex
-print(ADD_NN_N([1,9], [9,1,9]))
 """
+N-4
+Сложение натуральных чисел
+"""
+
+import classes
+from classes import natural
+
+
+def ADD_NN_N(a: classes.natural, b: classes.natural):
+    i = a.n - 1
+    j = b.n - 1
+    ost = 0
+    res = []
+
+    while i >= 0 or j >= 0 or ost > 0:
+        dig_a = a.data[i] if i >= 0 else 0
+        dig_b = b.data[j] if j >= 0 else 0
+
+        s = dig_a + dig_b + ost
+        res.append(s % 10)
+        ost = s // 10
+
+        i -= 1
+        j -= 1
+
+    res.reverse()
+    return classes.natural(res)
+
+print(ADD_NN_N(natural([1, 2, 3, 4]), natural([1])))

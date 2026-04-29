@@ -3,24 +3,19 @@ N-1
 Сравнение натуральных чисел: 2 - если первое больше второго, 0, если равно, 1 иначе.
 """
 
-def COM_NN_D(a, b):
-    # Сравнение длины
-    if len(a) > len(b):
+import classes
+
+def COM_NN_D(a: classes.natural, b: classes.natural):
+    if a.n > b.n:
         return 2
-    if len(a) < len(b):
+    if a.n < b.n:
         return 1
 
-    # Поразрядное сравнение
-    for i in range(len(a)):
-        if a[i] > b[i]:
+    for i in range(a.n):
+        if a.data[i] > b.data[i]:
             return 2
-        if a[i] < b[i]:
+        if a.data[i] < b.data[i]:
             return 1
 
-    # Равны
     return 0
 
-""" use ex
-print(COM_NN_D([3,2,3,4],[2,3,4]))
-"""
-print(COM_NN_D([3,2,3,4],[2,3,4]))

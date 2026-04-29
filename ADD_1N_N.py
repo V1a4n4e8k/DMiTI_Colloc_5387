@@ -3,21 +3,22 @@ N-3
 Добавление 1 к натуральному числу
 """
 
-def ADD_1N_N(a):
-    i = len(a) - 1
+import classes
+from classes import natural
+
+
+def ADD_1N_N(a: classes.natural):
+    res = a.data.copy()
+    i = len(res) - 1
 
     while i >= 0:
-        if a[i] != 9:
-            a[i] += 1
-            return a
-        else:
-            a[i] = 0
-            i -= 1
+        if res[i] < 9:
+            res[i] += 1
+            return classes.natural(res)
 
-    # если все цифры были 9
-    return [1] + a
+    res[i] = 0
+    i -= 1
 
-""" use ex
-a = [1][9]
-print(ADD_1N_N(a))
-"""
+    return classes.natural([1] + [0] * i)
+
+print(ADD_1N_N(natural([1, 2, 3])))
