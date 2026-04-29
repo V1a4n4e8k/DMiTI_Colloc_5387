@@ -1,3 +1,6 @@
+from typing import List
+from copy import deepcopy
+
 class natural:
     def __init__(self, data: list):
         self.data = data.copy()
@@ -31,8 +34,8 @@ class rational:
 
 
 class polynom:
-    def __init__(self, coef: list):
-        self.coef = coef.copy()
+    def __init__(self, coef: List[rational]):
+        self.coef = deepcopy(coef)
 
     @property
     def deg(self):
