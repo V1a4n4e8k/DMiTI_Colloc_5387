@@ -21,4 +21,3 @@ def ADD_1N_N(a: classes.natural):
 
     return classes.natural([1] + [0] * i)
 
-print(ADD_1N_N(natural([1, 2, 3])))

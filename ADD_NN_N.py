@@ -27,4 +27,3 @@ def ADD_NN_N(a: classes.natural, b: classes.natural):
     res.reverse()
     return classes.natural(res)
 
-print(ADD_NN_N(natural([1, 2, 3, 4]), natural([1])))
