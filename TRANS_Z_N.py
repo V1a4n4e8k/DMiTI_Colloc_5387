@@ -3,16 +3,12 @@ Z-5
 Преобразование целого неотрицательного в натуральное
 """
 
-import classes
+
+from copy import deepcopy
+
+import classes as cls
 
 
 def TRANS_Z_N(a: classes.integer):
-    output = classes.natural(a.data.data)
-    return output
-
-
-#Функция преобразования целого числа в натуральное
-
-#Функция возрващает натуральное число
-
-#Аргумент функции не меняется и не связывается
+    output = deepcopy(a)
+    return output.data

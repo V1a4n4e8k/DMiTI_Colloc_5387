@@ -1,18 +1,17 @@
 """
 Z-1
-Абсолютная величина числа, результат - натуральное
+Абсолютная величина числа, результат - целое
 """
 
-import classes
+
+from copy import deepcopy
+
+import classes as cls
 
 
-def ABS_Z_Z(a: classes.integer):
-    output = classes.integer(0, classes.natural(a.data.data))
+def ABS_Z_Z(a: cls.integer):
+    output = deepcopy(a)
+    
+    output.sign = 0
+    
     return output
-
-
-#Функция, которая ищет абсолютное значение целого числа
-
-#Функция возвращает целое число
-
-#Аргумент функции не меняется и не связывается
