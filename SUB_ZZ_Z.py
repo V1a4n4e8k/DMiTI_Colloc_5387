@@ -1,6 +1,6 @@
 """
-Z-6
-Сложение целых чисел
+Z-7
+Вычитание целых чисел
 """
 
 
@@ -13,12 +13,15 @@ import classes as cls
 from COM_NN_D import COM_NN_D
 from ADD_NN_N import ADD_NN_N
 from SUB_NN_N import SUB_NN_N
-#from MUL_ZM_Z import MUL_ZM_Z
+from MUL_ZM_Z import MUL_ZM_Z
 
 
-def ADD_ZZ_Z(a: cls.integer, b: cls.integer):
+def SUB_ZZ_Z(a: cls.integer, b: cls.integer):
     f = deepcopy(a)
     g = deepcopy(b)
+
+    #Умножаем вычитаемое на (-1)
+    g = MUL_ZM_Z(g)
 
     cmp = COM_NN_D(f.data, g.data)
 
