@@ -16,8 +16,8 @@ def ADD_1N_N(a: classes.natural):
             res[i] += 1
             return classes.natural(res)
 
-    res[i] = 0
-    i -= 1
+        res[i] = 0
+        i -= 1
 
-    return classes.natural([1] + [0] * i)
+    return classes.natural([1] + res)
 
