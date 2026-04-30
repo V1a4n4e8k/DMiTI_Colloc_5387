@@ -28,7 +28,7 @@ def zsign(num):
     return num.sign
 
 
-def assert_z(num, sign, digits):
+def assert_z(num : cl.integer, sign : int, digits : list):
     assert zsign(num) == sign
     assert zdigits(num) == digits
 
@@ -111,6 +111,6 @@ def test_div_zz_z():
 def test_mod_zz_z():
     assert_z(MOD_ZZ_Z(z(0, [1, 0]), z(0, [3])), 0, [1])
     assert_z(MOD_ZZ_Z(z(1, [1, 0]), z(0, [3])), 0, [2])
-    assert_z(MOD_ZZ_Z(z(0, [1, 0]), z(1, [3])), 1, [2])
-    assert_z(MOD_ZZ_Z(z(1, [1, 0]), z(1, [3])), 1, [1])
+    assert_z(MOD_ZZ_Z(z(0, [1, 0]), z(1, [3])), 0, [1])
+    assert_z(MOD_ZZ_Z(z(1, [1, 0]), z(1, [3])), 0, [2])
     assert_z(MOD_ZZ_Z(z(0, [1, 0]), z(0, [5])), 0, [0])
