@@ -15,12 +15,3 @@ def SUB_NDN_N(a : cl.natural, b : cl.natural, c : int):
     if COM_NN_D(a, b_new) == 1:
         return None
     return SUB_NN_N(a, b_new)
-
-
-
-
-
-
-
-
-

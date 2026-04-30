@@ -19,7 +19,7 @@ class integer:
         self.data = data
 
     def __str__(self):
-        sgn = '+' if self.sign == 0 else 1
+        sgn = '+' if self.sign == 0 else '-'
         return sgn + ''.join(map(str, self.data.data))
 
 
@@ -29,7 +29,7 @@ class rational:
         self.denominator = denominator
 
     def __str__(self):
-        sgn = '+' if self.numerator.sign == 0 else 1
+        sgn = '+' if self.numerator.sign == 0 else '-'
         return sgn + ''.join(map(str, self.numerator.data.data)) + '/' + ''.join(map(str, self.denominator.data))
 
 
