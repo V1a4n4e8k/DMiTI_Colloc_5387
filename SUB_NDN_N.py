@@ -3,6 +3,7 @@ N-9
 Вычитание из натурального другого натурального, умноженного на цифру для случая с неотрицательным результатом
 SUB_NDN_N <- SUB_NN_N; MUL_ND_N; COM_NN_D
 """
+
 from copy import deepcopy
 import classes as cl
 from SUB_NN_N import SUB_NN_N
