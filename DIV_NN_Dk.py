@@ -11,9 +11,6 @@ from MUL_Nk_N import MUL_Nk_N
 from MUL_ND_N import MUL_ND_N
 
 def DIV_NN_Dk(a_arg: cl.natural, b_arg: cl.natural):
-    if b_arg.n == 1 and b_arg.data[0] == 0:
-        return None
-
     if COM_NN_D(a_arg, b_arg) == 1:
         return None
 

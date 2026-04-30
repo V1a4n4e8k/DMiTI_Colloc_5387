@@ -3,6 +3,7 @@ N-14
 НОК натуральных чисел
 LCM_NN_N
 """
+
 from copy import deepcopy
 import classes as cl
 from MUL_NN_N import MUL_NN_N
