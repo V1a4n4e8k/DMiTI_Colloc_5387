@@ -29,8 +29,8 @@ def SUB_ZZ_Z(a: cls.integer, b: cls.integer):
         big = f
         sml = g
     elif cmp == 1:
-        big = f
-        sml = g
+        big = g
+        sml = f
     elif cmp == 0:
         #Без разницы, какое значение больше
         big = f
