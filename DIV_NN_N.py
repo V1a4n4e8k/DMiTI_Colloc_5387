@@ -18,7 +18,7 @@ def DIV_NN_N(a_arg : cl.natural, b_arg : cl.natural):
     rest = a
     sum = cl.natural([0])
     while(COM_NN_D(rest, b) != 1):
-        shift = DIV_NN_Dk(a, b)
+        shift = DIV_NN_Dk(rest, b)
         sum = ADD_NN_N(sum, shift)
         rest = SUB_NN_N(rest, MUL_NN_N(b, shift))
     return sum
