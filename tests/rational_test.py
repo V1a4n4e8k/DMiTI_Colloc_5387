@@ -68,11 +68,6 @@ def test_trans_z_q():
 
 # Q-4
 def test_trans_q_z():
-    assert_z = lambda x, sign, digits: (
-        assert_helper(x.sign == sign),
-        assert_helper(x.data.data == digits),
-    )
-
     x = TRANS_Q_Z(q(0, [1, 2], [1]))
     assert x.sign == 0
     assert x.data.data == [1, 2]
