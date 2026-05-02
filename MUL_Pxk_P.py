@@ -1,7 +1,13 @@
+"""
+P-4
+Умножение многочлена на x^k, k-натуральное или 0
+"""
+
 from classes import *
 from copy import deepcopy
 
-def MUL_Pxk_P(a : polynom, k : int):
+# Доделайте rational чтобы эту функцию тоже можно было сделать.
+def MUL_Pxk_P(a : polynom, k : natural):
     res = deepcopy(a)
     for i in range(k):
         res.coef.append(0)
