@@ -22,7 +22,7 @@ def DIV_QQ_Q(a: cls.rational, b: cls.rational):
         return None
 
     new_num = MUL_ZZ_Z(f.numerator, cls.integer(g.numerator.sign, g.denominator))
-    new_den = MUL_NN_N(f.denominator, cls.natural(g.numerator.data))
+    new_den = MUL_NN_N(f.denominator, g.numerator.data)
 
     output = cls.rational(new_num, new_den)
 
