@@ -13,6 +13,7 @@ from MUL_ZZ_Z import MUL_ZZ_Z
 from SUB_ZZ_Z import SUB_ZZ_Z
 #Функции не из списка
 from DIV_NN_N import DIV_NN_N
+from RED_Q_Q import RED_Q_Q
 
 
 def SUB_QQ_Q(a: cls.rational, b: cls.rational):
@@ -29,6 +30,6 @@ def SUB_QQ_Q(a: cls.rational, b: cls.rational):
 
     sub = SUB_ZZ_Z(new_f_num, new_g_num)
 
-    output = cls.rational(sub, lcm)
+    output = RED_Q_Q(cls.rational(sub, lcm))
 
     return output

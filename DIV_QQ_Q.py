@@ -12,6 +12,7 @@ from MUL_ZZ_Z import MUL_ZZ_Z
 #Функции не из списка
 from MUL_NN_N import MUL_NN_N
 from NZER_N_B import NZER_N_B
+from RED_Q_Q import RED_Q_Q
 
 
 def DIV_QQ_Q(a: cls.rational, b: cls.rational):
@@ -24,6 +25,6 @@ def DIV_QQ_Q(a: cls.rational, b: cls.rational):
     new_num = MUL_ZZ_Z(f.numerator, cls.integer(g.numerator.sign, g.denominator))
     new_den = MUL_NN_N(f.denominator, g.numerator.data)
 
-    output = cls.rational(new_num, new_den)
+    output = RED_Q_Q(cls.rational(new_num, new_den))
 
     return output
