@@ -1,8 +1,8 @@
 import classes as cl
 
-# from ADD_PP_P import ADD_PP_P
-# from SUB_PP_P import SUB_PP_P
-# from MUL_PQ_P import MUL_PQ_P
+from ADD_PP_P import ADD_PP_P
+from SUB_PP_P import SUB_PP_P
+from MUL_PQ_P import MUL_PQ_P
 from MUL_Pxk_P import MUL_Pxk_P
 from LED_P_Q import LED_P_Q
 from DEG_P_N import DEG_P_N
@@ -62,6 +62,18 @@ def test_sub_pp_p():
     )
 
     peq(r, [
+        (0, [1], [1]),
+        (0, [2], [1]),
+    ])
+    
+    # (2x + 5) - (6x^2 + x + 3) = -6x^2 + x + 2
+    r = SUB_PP_P(
+        p([q(0, [2], [1]), q(0, [5], [1])]),
+        p([q(0, [6], [1]), q(0, [1], [1]), q(0, [3], [1])])
+    )
+
+    peq(r, [
+        (1, [6], [1]),
         (0, [1], [1]),
         (0, [2], [1]),
     ])

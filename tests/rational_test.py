@@ -4,7 +4,7 @@ import classes as cl
 from INT_Q_B import INT_Q_B
 from TRANS_Z_Q import TRANS_Z_Q
 from TRANS_Q_Z import TRANS_Q_Z
-# from ADD_QQ_Q import ADD_QQ_Q
+from ADD_QQ_Q import ADD_QQ_Q
 from SUB_QQ_Q import SUB_QQ_Q
 from MUL_QQ_Q import MUL_QQ_Q
 from DIV_QQ_Q import DIV_QQ_Q
