@@ -1,6 +1,6 @@
 import classes as cl
 
-# from RED_Q_Q import RED_Q_Q
+from RED_Q_Q import RED_Q_Q
 from INT_Q_B import INT_Q_B
 from TRANS_Z_Q import TRANS_Z_Q
 from TRANS_Q_Z import TRANS_Q_Z

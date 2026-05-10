@@ -98,7 +98,7 @@ def test_mul_pxk_p():
     # (x + 1) * x^2 = x^3 + x^2
     r = MUL_Pxk_P(
         p([q(0, [1], [1]), q(0, [1], [1])]),
-        cl.natural([2])
+        2
     )
 
     peq(r, [
