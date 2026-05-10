@@ -9,8 +9,6 @@ from copy import deepcopy
 import classes as cls
 
 from SUB_QQ_Q import SUB_QQ_Q
-#Функции не из списка
-from MUL_ZM_Z import MUL_ZM_Z
 
 
 def SUB_PP_P(a: cls.polynom, b: cls.polynom):
@@ -22,13 +20,27 @@ def SUB_PP_P(a: cls.polynom, b: cls.polynom):
 
     new_coef = []
 
-    for i, x in enumerate(g.coef):
-        if i > f.deg:
-            x.numerator = MUL_ZM_Z(x.numerator)
-            new_coef.append(x)
-        else:
-            new_coef.append(SUB_QQ_Q(f.coef[i], x))
+    zero = cls.rational(
+        cls.integer(0, cls.natural([0])),
+        cls.natural([1])
+    )
+
+    max_len = max(len(f.coef), len(g.coef))
+
+    for i in range(max_len):
+        coef_f = f.coef[i] if i < len(f.coef) else zero
+        coef_g = g.coef[i] if i < len(g.coef) else zero
+
+        new_coef.append(SUB_QQ_Q(coef_f, coef_g))
 
     new_coef.reverse()
+
+    # удаление ведущих нулей
+    while (
+        len(new_coef) > 1
+        and new_coef[0].numerator.data.n == 1
+        and new_coef[0].numerator.data.data[0] == 0
+    ):
+        new_coef.pop(0)
 
     return cls.polynom(new_coef)

@@ -7,7 +7,7 @@ from MUL_Pxk_P import MUL_Pxk_P
 from LED_P_Q import LED_P_Q
 from DEG_P_N import DEG_P_N
 from FAC_P_Q import FAC_P_Q
-# from MUL_PP_P import MUL_PP_P
+from MUL_PP_P import MUL_PP_P
 # from DIV_PP_P import DIV_PP_P
 # from MOD_PP_P import MOD_PP_P
 # from GCF_PP_P import GCF_PP_P
@@ -160,6 +160,7 @@ def test_mul_pp_p():
         p([q(0, [1], [1]), q(0, [2], [1])])
     )
 
+    print(r.coef)
     peq(r, [
         (0, [1], [1]),
         (0, [3], [1]),

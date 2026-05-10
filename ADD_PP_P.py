@@ -20,11 +20,18 @@ def ADD_PP_P(a: cls.polynom, b: cls.polynom):
 
     new_coef = []
 
-    for i, x in enumerate(g.coef):
-        if i > f.deg:
-            new_coef.append(x)
-        else:
-            new_coef.append(ADD_QQ_Q(f.coef[i], x))
+    max_len = max(len(f.coef), len(g.coef))
+
+    zero = cls.rational(
+        cls.integer(0, cls.natural([0])),
+        cls.natural([1])
+    )
+
+    for i in range(max_len):
+        coef_f = f.coef[i] if i < len(f.coef) else zero
+        coef_g = g.coef[i] if i < len(g.coef) else zero
+
+        new_coef.append(ADD_QQ_Q(coef_f, coef_g))
 
     new_coef.reverse()
 
