@@ -1,7 +1,24 @@
-from classes import *
+"""
+P-6
+Степень многочлена
+"""
 
-def DEG_P_N(a : polynom):
-    return(a.deg)
-"""
-print(DEG_P_N(polynom([rational(integer(1, natural([1,2,3,4])), natural([1,2,3,4]))]*2)))
-"""
+
+from copy import deepcopy
+
+import classes as cls
+
+
+def DEG_P_N(a: cls.polynom):
+    f = deepcopy(a)
+    
+    s = str(f.deg)
+
+    new_data = []
+
+    for x in s:
+        new_data.append(int(x))
+    
+    return cls.natural(new_data)
+
+
