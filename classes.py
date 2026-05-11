@@ -42,4 +42,48 @@ class polynom:
         return len(self.coef) - 1
 
     def __str__(self):
-        pass
+        parts = []
+
+        for i, coef in enumerate(self.coef):
+            power = self.deg - i
+
+            sign = '-' if coef.numerator.sign == 1 else '+'
+
+            num = ''.join(map(str, coef.numerator.data.data))
+            den = ''.join(map(str, coef.denominator.data))
+
+            # пропускаем нулевые коэффициенты
+            if num == '0':
+                continue
+
+            # коэффициент
+            if den == '1':
+                coef_str = num
+            else:
+                coef_str = f'({num}/{den})'
+
+            # убираем 1 перед x
+            if coef_str == '1' and power != 0:
+                coef_str = ''
+
+            # переменная
+            if power > 1:
+                term = f'{coef_str}x^{power}'
+            elif power == 1:
+                term = f'{coef_str}x'
+            else:
+                term = f'{coef_str}'
+
+            # знак
+            if len(parts) == 0:
+                if sign == '-':
+                    parts.append('-' + term)
+                else:
+                    parts.append(term)
+            else:
+                parts.append(f' {sign} {term}')
+
+        if len(parts) == 0:
+            return '0'
+
+        return ''.join(parts)
