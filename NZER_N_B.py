@@ -6,6 +6,8 @@ N-2
 import classes
 
 def NZER_N_B(a: classes.natural):
+    # 1. Проверяем, если в числе 1 цифра и это ноль, то само число - ноль
     if a.n == 1 and a.data[0] == 0:
         return 0
+    # 2. Дошли до сюда - число а не ноль
     return 1
