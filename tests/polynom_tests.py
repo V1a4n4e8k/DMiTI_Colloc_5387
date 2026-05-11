@@ -8,11 +8,11 @@ from LED_P_Q import LED_P_Q
 from DEG_P_N import DEG_P_N
 from FAC_P_Q import FAC_P_Q
 from MUL_PP_P import MUL_PP_P
-# from DIV_PP_P import DIV_PP_P
-# from MOD_PP_P import MOD_PP_P
-# from GCF_PP_P import GCF_PP_P
-# from DER_P_P import DER_P_P
-# from NMR_P_P import NMR_P_P
+from DIV_PP_P import DIV_PP_P
+from MOD_PP_P import MOD_PP_P
+from GCF_PP_P import GCF_PP_P
+from DER_P_P import DER_P_P
+from NMR_P_P import NMR_P_P
 
 
 def q(sign, num, den):
