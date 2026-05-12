@@ -1,3 +1,8 @@
+"""
+Q-1
+Сокращение дроби
+"""
+
 from classes import *
 from ABS_Z_Z import ABS_Z_Z
 from GCF_NN_N import GCF_NN_N

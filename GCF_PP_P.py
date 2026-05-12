@@ -47,7 +47,7 @@ def GCF_PP_P(a_arg: cl.polynom, b_arg: cl.polynom):
     if is_zero_poly(a):
         return a
 
-    # делаем НОД так чтобы старший коэффициент был положительным
+    # делаем НОД так чтобы старший коэффициент был положительным (нормализация)
     st = a.coef[0]
     factor = DIV_QQ_Q(one_q(), st)
 
