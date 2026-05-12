@@ -23,14 +23,14 @@ def FAC_P_Q(a: cls.polynom):
 
     i = 2
     while i < len(f.coef):
-        com_lcm = LCM_NN_N(com_gcf, f.coef[1].denominator)
+        com_lcm = LCM_NN_N(com_lcm, f.coef[i].denominator)
         i += 1
     
     com_gcf = GCF_NN_N(f.coef[0].numerator.data, f.coef[1].numerator.data)
 
     i = 2
     while i < len(f.coef):
-        com_gcf = GCF_NN_N(com_lcm, f.coef[i].numerator.data)
+        com_gcf = GCF_NN_N(com_gcf, f.coef[i].numerator.data)
         i += 1
 
     output = cls.rational(cls.integer(0, com_gcf), com_lcm)
